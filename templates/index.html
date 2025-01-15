@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">PDF Question Answering System</h1>
+    
+    <div class="row mb-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Mode Selection</h5>
+                </div>
+                <div class="card-body">
+                    <select id="mode-selector" class="form-select" onchange="switchMode(this.value)">
+                        <option value="technical">Technical Mode</option>
+                        <option value="summary">Summary Mode</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Ask a Question</h5>
+                </div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" id="question-input" class="form-control" 
+                               placeholder="Enter your question here...">
+                        <button class="btn btn-primary" onclick="askQuestion()">Ask</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Response</h5>
+                </div>
+                <div class="card-body">
+                    <div id="response-container" class="mb-4"></div>
+                    
+                    <h6 class="mb-3">Source Documents:</h6>
+                    <div id="sources-container" class="mb-4"></div>
+                    
+                    <h6 class="mb-3">Usage Statistics:</h6>
+                    <div id="stats-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading-overlay d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

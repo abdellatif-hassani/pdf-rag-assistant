@@ -1,0 +1,11 @@
+langchain==0.1.0
+langchain-community>=0.0.10
+langchain-openai>=0.0.2
+chromadb>=0.4.15
+openai>=1.6.1
+tiktoken>=0.5.1
+unstructured>=0.10.30
+pypdf>=3.16.4
+python-dotenv>=1.0.0
+flask>=2.0.1
+flask-cors>=3.0.10
